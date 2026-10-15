@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রফেশনাল পোর্টফোলিও</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS STYLES -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #222;
+        }
+
+        .logo span {
+            color: #007bff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(102, 16, 242, 0.05));
+            padding: 0 20px;
+        }
+
+        .hero-content h3 {
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #222;
+            margin: 10px 0;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .typed-text {
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .cursor {
+            display: inline-block;
+            background-color: #007bff;
+            width: 3px;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .primary-btn {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .primary-btn:hover {
+            background: #0056b3;
+        }
+
+        .secondary-btn {
+            border: 2px solid #007bff;
+            color: #007bff;
+            background: transparent;
+        }
+
+        .secondary-btn:hover {
+            background: #007bff;
+            color: #fff;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 10%;
+        }
+
+        .light-bg {
+            background: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        /* About */
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .personal-info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">পোর্টফোলিও<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#about">আমার সম্পর্কে</a></li>
+                <li><a href="#skills">দক্ষতা</a></li>
+                <li><a href="#projects">প্রজেক্ট</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3>হ্যালো, আমি</h3>
+            <h1>[আপনার নাম]</h1>
+            <p>আমি একজন <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn primary-btn">যোগাযোগ করুন</a>
+                <a href="#projects" class="btn secondary-btn">প্রজেক্ট দেখুন</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">আমার সম্পর্কে</h2>
+        <div class="about-container">
+            <p>আমি একজন উৎসাহী ডেভেলপার যিনি চমৎকার, ইউজার-ফ্রেন্ডলি এবং রেসপনসিভ ওয়েবসাইট তৈরিতে পারদর্শী। কোডিংয়ের প্রতি আমার ভালোবাসা আমাকে নতুন প্রযুক্তি শিখতে এবং জটিল সমস্যার সমাধান করতে অনুপ্রাণিত করে।</p>
+            <div class="personal-info">
+                <p><strong>ইমেইল:</strong> your.email@example.com</p>
+                <p><strong>ঠিকানা:</strong> ঢাকা, বাংলাদেশ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section light-bg">
+        <h2 class="section-title">আমার দক্ষতা</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5</h3>
+                <p>সেমান্টিক মার্কআপ ও আধুনিক লেআউট ডিজাইন।</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3</h3>
+                <p>মডার্ন লেআউট, ফ্লেক্সবক্স ও গ্রিড স্টাইলিং।</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>ডাইনামিক ফিচার ও লজিক ইমপ্লিমেন্টেশন।</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-react"></i>
+                <h3>React.js</h3>
+                <p>কম্পোনেন্ট বেইজড ইন্টারঅ্যাক্টিভ ইন্টারফেস।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">আমার প্রজেক্টসমূহ</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>ই-কমার্স ওয়েবসাইট</h3>
+                    <p>HTML, CSS ও JavaScript দিয়ে তৈরি একটি রেসপনসিভ শপিং ইন্টারফেস।</p>
+                    <a href="#" class="project-link">লাইভ প্রিভিউ <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>টাস্ক ম্যানেজার অ্যাপ</h3>
+                    <p>দৈনন্দিন কাজ ট্র্যাক করার জন্য একটি ডাইনামিক টু-ডু লিস্ট অ্যাপ।</p>
+                    <a href="#" class="project-link">লাইভ প্রিভিউ <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section light-bg">
+        <h2 class="section-title">যোগাযোগ করুন</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="আপনার নাম" required>
+            <input type="email" placeholder="আপনার ইমেইল" required>
+            <textarea placeholder="আপনার বার্তা লিখুন..." rows="5" required></textarea>
+            <button type="submit" class="btn primary-btn">বার্তা পাঠান</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; ২০২৬ সর্বস্বত্ব সংরক্ষিত।</p>
